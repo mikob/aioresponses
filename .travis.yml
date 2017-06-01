@@ -38,6 +38,26 @@ matrix:
     - python: 3.5
       env: TOXENV=coverage
 
+    - python: 3.6
+      env: TOXENV=py36-aiohttp10
+    - python: 3.6
+      env: TOXENV=py36-aiohttp11
+    - python: 3.6
+      env: TOXENV=py36-aiohttp12
+    - python: 3.6
+      env: TOXENV=py36-aiohttp13
+    - python: 3.6
+      env: TOXENV=py36-aiohttp20
+    - python: 3.6
+      env: TOXENV=py36-aiohttp21
+    - python: 3.6
+      env: TOXENV=py36-aiohttpmaster
+
+    - python: 3.6
+      env: TOXENV=flake8
+    - python: 3.6
+      env: TOXENV=coverage
+
 # command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 install: pip install -U tox coveralls
 

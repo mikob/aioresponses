@@ -24,10 +24,14 @@ class AIOResponsesTestCase(TestCase):
     def setUp(self):
         self.url = 'http://example.com/api'
         self.loop = asyncio.get_event_loop()
-        self.session = ClientSession()
+        self.loop.run_until_complete(self.create_session())
 
     def tearDown(self):
         self.session.close()
+
+    @asyncio.coroutine
+    def create_session(self):
+        self.session = ClientSession()
 
     @data(
         hdrs.METH_GET,
